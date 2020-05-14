@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Error from './Error'
 
-const Form = ({setSearchLyrics}) => {
+const Form = ({ setSearchLyrics }) => {
   //state of form (name equal of "name input")
   const [search, setSearch] = useState({
     artist: '',
@@ -44,9 +44,7 @@ const Form = ({setSearchLyrics}) => {
             className="col card text-white bg-transparent mb-5 pt-4 pb-2"
           >
             <fieldset>
-              <div className="text-center">
-                <legend>Song Lyrics Finder</legend>
-              </div>
+              <legend className="text-center">Song Lyrics Finder</legend>
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">

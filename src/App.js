@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useEffect } from 'react';
 import Form from './components/Form'
+import Song from './components/Song'
 import axios from 'axios'
 
 
@@ -33,6 +34,17 @@ consultAPIlyrics()
    <Fragment>
      <Form 
      setSearchLyrics={setSearchLyrics}/>
+
+     <div className="container">
+       <div className="row">
+         <div className="col-md-6">
+         </div>
+         <div className="col-md-6">
+              <Song lyrics={lyrics}/>
+           
+         </div>
+       </div>
+     </div>
    </Fragment>
   );
 }

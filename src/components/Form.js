@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Error from './Error'
+import PropTypes from 'prop-types'
 
 const Form = ({ setSearchLyrics }) => {
   //state of form (name equal of "name input")
@@ -83,6 +84,11 @@ const Form = ({ setSearchLyrics }) => {
       </div>
     </div>
   )
+}
+
+//Documentation
+Form.propTypes={
+    setSearchLyrics: PropTypes.func.isRequired
 }
 
 export default Form

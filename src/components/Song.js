@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
 const Song = ({ lyrics }) => {
   //Prevent loading empty component
@@ -11,5 +12,11 @@ const Song = ({ lyrics }) => {
     </Fragment>
   )
 }
+
+//Documentation
+Song.propTypes={
+    lyrics: PropTypes.string.isRequired
+}
+
 
 export default Song

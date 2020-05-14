@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Info = ({ info }) => {
   //Prevent loading empty component. (Object.key because is an Objet)
@@ -43,6 +44,11 @@ const Info = ({ info }) => {
       </div>
     </div>
   )
+}
+
+//Documentation
+Info.propTypes={
+    info: PropTypes.object.isRequired
 }
 
 export default Info

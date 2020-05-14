@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Error from './Error'
 
 const Form = () => {
 
@@ -38,14 +39,16 @@ const handleSubmit = e => {
   return (
     <div className="bg-info">
       <div className="container">
+           
         <div className="row">
           <form 
                 onSubmit = {handleSubmit}
                 className="col card text-white bg-transparent mb-5 pt-4 pb-2"
           >
             <fieldset>
-              <legend className="text-center">Song Lyrics Finder</legend>
-
+              <div className="text-center">
+              <legend >Song Lyrics Finder</legend>
+              </div>
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">
@@ -74,7 +77,7 @@ const handleSubmit = e => {
                   </div>
                 </div>
               </div>
-
+              {error ? <Error message="All fields are required"/> : null}
               <button 
               type="submit"
               className="btn btn-primary float-right">Search</button>

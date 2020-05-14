@@ -8,10 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 label {
   font-family: 'Work Sans', sans-serif;
   font-size: 22px;
 }
+
+
 
 legend {
   position: relative;
@@ -19,7 +23,9 @@ legend {
   display: inline-block;
   width: auto;
   margin: 0;
-  margin-bottom: 40px;
+  /* text-align: center; */
+  /* margin:auto; */
+  margin-bottom: 30px;
   font-family: 'Work Sans', sans-serif;
 }
 
@@ -28,7 +34,7 @@ legend::before {
   content: '';
   width: calc(120% );
   display: block;
-  background-color:#EB6864;
+  background-color:rgb(235, 183, 100);
   height: 40px;
   z-index:-1;
   left: -30px;

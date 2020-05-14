@@ -1,54 +1,51 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Error from './Error'
 
-const Form = ({setSearchLetter}) => {
-
-//state of form (name equal of "name input")
-const [search, setSearch] = useState({
+const Form = ({setSearchLyrics}) => {
+  //state of form (name equal of "name input")
+  const [search, setSearch] = useState({
     artist: '',
-    song: ''
-})
-const [error, setError] = useState(false)
+    song: '',
+  })
+  const [error, setError] = useState(false)
 
-//extract artist and song for to put in value of input
-const {artist, song} = search
+  //extract artist and song for to put in value of input (use in consultApilyrics)
+  const { artist, song } = search
 
-//UPDATE STATE. function to each "input" to read its content
-const handleChange = (e) =>{
-        setSearch({
-        ...search,
-        [e.target.name] : e.target.value
+  //UPDATE STATE. function to each "input" to read its content
+  const handleChange = (e) => {
+    setSearch({
+      ...search,
+      [e.target.name]: e.target.value,
     })
-}
+  }
 
-//SEARCH INFO, consult API
-const handleSubmit = e => {
+  //SEARCH INFO, consult API
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     //validate
-    if(artist.trim() === '' || song.trim()=== '') {
-        setError(true)
-        return
+    if (artist.trim() === '' || song.trim() === '') {
+      setError(true)
+      return
     }
     setError(false)
-    
+
     //pass to principal component
-    setSearchLetter(search)
-    
-}
+    setSearchLyrics(search)
+  }
 
   return (
     <div className="bg-info">
       <div className="container">
-           
         <div className="row">
-          <form 
-                onSubmit = {handleSubmit}
-                className="col card text-white bg-transparent mb-5 pt-4 pb-2"
+          <form
+            onSubmit={handleSubmit}
+            className="col card text-white bg-transparent mb-5 pt-4 pb-2"
           >
             <fieldset>
               <div className="text-center">
-              <legend >Song Lyrics Finder</legend>
+                <legend>Song Lyrics Finder</legend>
               </div>
               <div className="row">
                 <div className="col-md-6">
@@ -78,10 +75,10 @@ const handleSubmit = e => {
                   </div>
                 </div>
               </div>
-              {error ? <Error message="All fields are required"/> : null}
-              <button 
-              type="submit"
-              className="btn btn-primary float-right">Search</button>
+              {error ? <Error message="All fields are required" /> : null}
+              <button type="submit" className="btn btn-primary float-right">
+                Search
+              </button>
             </fieldset>
           </form>
         </div>

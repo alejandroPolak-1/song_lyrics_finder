@@ -1,11 +1,15 @@
-import React, {Fragment } from 'react';
+import React, {Fragment, useState } from 'react';
 import Form from './components/Form'
 
 
 function App() {
+  
+  //define state
+const [searchletter, setSearchLetter] = useState({})
   return (
    <Fragment>
-     <Form />
+     <Form 
+     setSearchLetter={setSearchLetter}/>
    </Fragment>
   );
 }

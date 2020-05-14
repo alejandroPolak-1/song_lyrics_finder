@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Error from './Error'
 
-const Form = () => {
+const Form = ({setSearchLetter}) => {
 
 //state of form (name equal of "name input")
 const [search, setSearch] = useState({
@@ -33,6 +33,7 @@ const handleSubmit = e => {
     setError(false)
     
     //pass to principal component
+    setSearchLetter(search)
     
 }
 
